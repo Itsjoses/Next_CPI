@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors:{
+        'purpleMenu':"#7063FE",
         light:{
           primary: '#dfe9f5',
           secondary: '#06A3DA',
@@ -18,8 +19,6 @@ module.exports = {
         dark:{
 
         }
-
-        
       }
     },
     minWidth:{
@@ -28,6 +27,9 @@ module.exports = {
     },
     boxShadow:{
       custom: '0 20px 35px rgba(0, 0, 0, 0.1)'
+    },
+    boxShadow:{
+      neonCustom: '-5px 5px 2em .3em #D24DB2, 5px -5px 2em .3em #B354D0'
     }
   },
   plugins: [],

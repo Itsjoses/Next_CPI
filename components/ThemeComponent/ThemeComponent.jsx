@@ -30,10 +30,22 @@ export function IconImage({ FontImage,...attr}){
     </FontAwesomeIcon>
 }
 
-export function FontNavbar({children, style,...attr}){
+export function IconColor({children, ...attr}){
+    const FontColor = GetFontTheme()
+    return <div style={FontColor.Icon} {...attr}>{children}</div>
+}
+
+export function FontNavbar({children, Check,...attr}){
     const FontTheme = GetFontTheme()
     const FontOpacity = GetFontOpacity()
-    const MergeObject = {...FontTheme.Primary,...FontOpacity,...style}
+
+    const MergeObject = Check ? {...FontTheme.Hover, ...FontOpacity} : {...FontTheme.Primary, ...FontOpacity}
     return <div style={MergeObject} {...attr}> {children} </div>
 }
+
+export function FontColor({children, ...attr}){
+    const FontColor = GetFontTheme()
+    return <div style={FontColor.Primary}  {...attr}>{children}</div>
+}
+
 
