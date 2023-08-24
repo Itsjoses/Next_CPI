@@ -25,20 +25,28 @@ export const FontColorValue = {
 }
 
 export const FontOpacityValue = {
-    On : {opacity: 1},
-    Off : {opacity: 0} 
+    On : {display: "inline",opacity: 1},
+    Off : {display: "none",opacity: 0} 
 }
 
 
 export const Language = {
     IDN : {
         Home: "Beranda",
+        Participant: "Partisipasi",
+        Questionnaire : "Pertanyaan",
+        Responses: "Responsi",
+        Admin: "Admin",
         Logout: "Logout",
         DarkMode: "Mode Malam",
         Language: "Bahasa"
     },
     EN : {
         Home: "Home",
+        Participant: "Participant",
+        Questionnaire : "Questionnaire",       
+        Responses: "Responses",
+        Admin: "Admin",
         Logout: "Keluar",
         DarkMode: "Dark Mode",
         Language: "Language"

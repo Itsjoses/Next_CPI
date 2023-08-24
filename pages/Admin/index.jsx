@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Header from "@/components/Utility/Header/header";
-import { SecondaryColor, ThirdColor } from "@/components/ThemeComponent/ThemeComponent";
+import Header from "@/components/Utility/Header/Sidebar";
+import { NavbarLayout, SecondaryColor, ThirdColor } from "@/components/ThemeComponent/ThemeComponent";
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { Card } from "@/components/Utility/Admin/HomeComponent";
+import { BarChartOverView } from "@/components/Utility/Admin/BarChart";
 export default function Home() {
   const [age, setAge] = useState('');
 
@@ -10,10 +11,9 @@ export default function Home() {
     setAge(event.target.value);
   };
   return (
-    <SecondaryColor className="flex h-screen w-screen">
-      <Header />
-      <div className="p-5 w-full h-screen overflow-scroll">
-        <div className="Top-Title ">
+    <NavbarLayout>
+      <div className="p-5 w-full h-full overflow-scroll">
+        <div className="Top-Title">
           <div className="Title text-4xl font-bold">
             <p>Dashboard</p>
           </div>
@@ -66,12 +66,15 @@ export default function Home() {
           </Card>
           </div>
         </div>
-        <div className="Chart flex gap-4 mt-8">
-          <Card className="w-3/5 bg-white h-96 rounded-md transition:w duration-500"></Card>
-          <Card className="w-2/5 bg-white h-96 rounded-md transition:w duration-500"></Card>
+        <div className="box-border Chart flex gap-4 mt-8 flex-col lg:flex-row">
+          <Card className="box-border w-full lg:w-3/5 bg-white h-[28rem] rounded-md transition:w duration-500 flex flex-col p-5">
+            <p className="box-border mb-4 font-semibold">Responses Overview</p>
+            <BarChartOverView/>
+          </Card>
+          <Card className="w-full lg:w-2/5 bg-white h-[28rem] rounded-md transition:w duration-500"></Card>
         </div>
         
       </div>
-    </SecondaryColor>
+    </NavbarLayout>
   );
 }

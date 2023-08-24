@@ -15,13 +15,15 @@ export function GetFontOpacity(){return useContext(FontOpacityGetter) }
 export default function FunctionComponent({children}) {
     const [StateFontOpacity,setFontOpacity] = useState(FontOpacityValue.Off)
 
-    function FontOpacity(){
-        
-        setFontOpacity(StateFontOpacity == FontOpacityValue.Off ? FontOpacityValue.On : FontOpacityValue.Off )
+    function FontOpacityon({boolean}){
+          setFontOpacity(FontOpacityValue.On)
+    }
+    function FontOpacityoff({boolean}){
+          setFontOpacity(FontOpacityValue.Off)
     }
  
   return (
-    <FontOpacityFunction.Provider value={FontOpacity}>
+    <FontOpacityFunction.Provider value={{FontOpacityon,FontOpacityoff}}>
         <FontOpacityGetter.Provider value={StateFontOpacity}>
             {children}
         </FontOpacityGetter.Provider>
